@@ -1,5 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import Nav from "@/components/Nav.vue";
+import App from "@/App.vue";
 
 describe("Nav.vue", () => {
   it("renders props.links when passed", () => {
@@ -8,5 +9,13 @@ describe("Nav.vue", () => {
       propsData: { links }
     });
     expect(wrapper.text()).toMatch(links[0].text);
+  });
+
+  it("it shows default title", () => {
+    const title = "Code note";
+    const wrapper = shallowMount(App, {
+      propsData: {}
+    });
+    expect(wrapper.text()).toMatch(title);
   });
 });
