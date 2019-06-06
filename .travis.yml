@@ -1,21 +1,18 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - yarn test
-
+- yarn test
+- yarn build
 deploy:
-  - provider: s3
-    access_key_id: $ACCESS_KEY_ID
-    secret_access_key: $SECRET_ACCESS_KEY
-    bucket: "codenote"
-  - provider: codedeploy
-    access_key_id: $ACCESS_KEY_ID
-    secret_access_key: $SECRET_ACCESS_KEY
-    bucket: "codenote"
-    key: "codenote"
-    application: "codenote"
-    deployment_group: "code-note-deploy-group"
+  provider: s3
+  access_key_id: AKIAQY73EXOQWNUWSXFJ
+  secret_access_key:
+    secure: KtBT2clweDiGt/ZEpWG+32DCQavOL0cPx99CEkRTbXkxC15dbZbPqI1X37hV//QCDMfaF/gofFgjYl6TJBvAJGFL3EpBicCraRaXJNDTscLEocHDv4On+HuXSXJS5JYYfDr3LYUkUqHzBFKOy8+0JiOEi/OoghVL2jdnssibKiZrrG85KQvWV/R0Z4//Fu0wsnRjBma9qxwuy01HFQAksoE0qfk02nOqBMWOSX4jZXHWKhhvsUelzSnqVfxgeeT9IDOflII3nZchrTuCl5G/6efVRohRB1XyiXWXLsNhMN+YbvN93XSNXvEApzncOGKIUrJEvTt0kDjwG31flqO/F2+b35nztlsWtvcI86RohpiE+t1V43Z+Ph03fUlSID7aNyOl5gfyYvO4QMwZ1Ylb70tVlPzCsyDJtXESdY/R9V82ZieJpe0tAwbXJf2RnUpM9g8kk2XolyHteEy70oFN8nQ/Dd8ceEIkST6puJm4zvHrR081gpNltbhO2faz1nOEm8Rp9l35DgYoq1ftlPL/S96SvOqvEUWdGYqR1+kUDj9PLNfnUZc8k0MS0646tU95mRGXGajb8LnO4PT1eiSG7LhaLuaYr2OzIklnLskOdr3ja+OH6W6P2pUhO9D4v75eyr1eRYeUj79rDAH6LNYY7fTDjsCorZyPmQbEj7us0kw=
+  bucket: codenote
+  local-dir: "./dict"
+  on:
+    repo: skyying/codenote
