@@ -9,11 +9,12 @@ script:
 - yarn build
 deploy:
   provider: s3
+  skip-cleanup: true
   access_key_id: AKIAQY73EXOQ56CZB3P7
   secret_access_key:
     secure: VfSIJiYNM19fon5tK3yzC1LX6TGvYDtTa9jrUJvfxpxX+BC6skXcymufp+SoTuNig184xgT7Oxt8Pcqq1owPefVwum8BqgDc//eYGL2No30BW0cjBQq2l0acpdC7HuC90sYGi97K17subpyoA7QyZhfjrkv7DBQ+sL4Fz+/hyxfk2HNwBDTBL/tomdDYhNLSD8YGieJh4N1HNsf374yb4o+3hA5VNXXn4LvPj3+ZX/F83V8WQExUl2GnZ7Kk9wM6k9vUjkjCEcYQsfeYK1riaXDtzWDv4ayREnbARpL2yKxYI/QvSno5KQhuBwwGJdxi7iTFpxVcQqFckHX9oG+eMripZiJkqZ6IEiUS7NF+XquxhHOQ6aKev81usbzBeFvUWkg+hpxhjBJQ6Tx4AxwQ/7JFOMZKAFYm7dqBsxi/3icHQjq8adgb0yAH1L1fPgz8zybD+VjQYeeClQDVA8w4xCR9GIyrkB5KCb5e6tGhhJ+aom+7UnMan52f3Rcosg8HozsjlovDW45G/5TOrxSQ7wRwbAi6mHI3mvq9OOk4gvQ1jEVDW/gFXmtxIRb0A3BBbDgeTW08l+GNQVLJle3oy4el2JRqLL3zYK3URRTKuUFLYzew0np5fK/5Ai71dqe1NkTmtmfyAKRwwOHCVESl/xDEcHNGCkzrLr01W5KH3yc=
   bucket: codenote
-  local-dir: "./dist"
+  local-dir: dist
   acl: public_read
   on:
     repo: skyying/codenote
