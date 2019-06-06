@@ -18,3 +18,4 @@ deploy:
   acl: public_read
   on:
     repo: skyying/codenote
+    branch: master
