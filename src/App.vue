@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      links: [{ id: 0, text: "link1" }, { id: 1, text: "link2" }]
+      links: [{ id: 0, text: "this may be a magic" }, { id: 1, text: "link2" }]
     };
   }
 };
